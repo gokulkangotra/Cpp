@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int carCount = 0, bikeCount = 0, rickshawCount = 0;
+    int choice;
+
+    while (true) {
+        cout << "Parking Menu:\n";
+        cout << "1. Car\n";
+        cout << "2. Bike\n";
+        cout << "3. Rickshaw\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                carCount++;
+                cout << "Car parked successfully. Total cars parked: " << carCount << endl;
+                break;
+            case 2:
+                bikeCount++;
+                cout << "Bike parked successfully. Total bikes parked: " << bikeCount << endl;
+                break;
+            case 3:
+                rickshawCount++;
+                cout << "Rickshaw parked successfully. Total rickshaws parked: " << rickshawCount << endl;
+                break;
+            case 4:
+                cout << "Exiting the program.\n";
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+
+        char continueParking;
+        cout << "Do you want to add another vehicle? (y/n): ";
+        cin >> continueParking;
+
+        if (continueParking == 'n' || continueParking == 'N') {
+            cout << "Exiting the program.\n";
+            break;
+        }
+    }
+
+    return 0;
+}
